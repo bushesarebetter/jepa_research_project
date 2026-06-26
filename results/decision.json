@@ -1,0 +1,11 @@
+{
+  "p_lo": 0.5,
+  "p_hi": 1.0,
+  "jepa_lo": 0.6142916666666666,
+  "jepa_hi": 1.0,
+  "ae_lo": 1.0,
+  "gap_jepa_predictability": 0.38570833333333343,
+  "gap_ae_minus_jepa_at_lo": 0.38570833333333343,
+  "verdict": "GO",
+  "reason": "JEPA selectively drops switch_color as predictability decreases; AE retains it."
+}

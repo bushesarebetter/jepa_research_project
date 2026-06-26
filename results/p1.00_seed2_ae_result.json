@@ -1,0 +1,13 @@
+{
+  "model_type": "ae",
+  "p_repeat": 1.0,
+  "seed": 2,
+  "linear_probe_acc": 1.0,
+  "linear_probe_std": 0.0,
+  "nonlinear_probe_acc": 1.0,
+  "nonlinear_probe_std": 0.0,
+  "effective_rank": 3.9395852088928223,
+  "centroid_dist_norm": 9.496822357177734,
+  "control_regret": 0.0,
+  "policy_reward": 1.0
+}

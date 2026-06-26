@@ -1,0 +1,13 @@
+{
+  "model_type": "jepa",
+  "p_repeat": 0.8,
+  "seed": 2,
+  "linear_probe_acc": 1.0,
+  "linear_probe_std": 0.0,
+  "nonlinear_probe_acc": 1.0,
+  "nonlinear_probe_std": 0.0,
+  "effective_rank": 13.17448902130127,
+  "centroid_dist_norm": 2.4444704055786133,
+  "control_regret": 0.0,
+  "policy_reward": 1.0
+}

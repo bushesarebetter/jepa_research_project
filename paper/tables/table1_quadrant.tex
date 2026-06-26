@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Full objective $\times$ cell retention matrix. Values are linear probe accuracy (mean\,$\pm$\,std over 3 seeds, chance\,=\,0.50). Highlighted: cell 4 (exo\,+\,rel), the hard case where only reward-grounded signals retain the feature.}
+\label{tab:quadrant_matrix}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Objective} & \makecell{\textbf{Cell 1}\\\\\textbf{ctrl+rel}} & \makecell{\textbf{Cell 2}\\\\\textbf{ctrl+irr}} & \makecell{\textbf{Cell 3}\\\\\textbf{exo+irr}} & \makecell{\textbf{Cell 4}\\\\\textbf{exo+rel}} \\
+\midrule
+  \texttt{recon} & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ \\
+  \texttt{jepa} & $0.51 \pm 0.01$ & $0.51 \pm 0.01$ & $0.52 \pm 0.02$ & $0.52 \pm 0.02$ \\
+  \texttt{jepa\_ac} & $0.51 \pm 0.01$ & $0.51 \pm 0.01$ & $0.52 \pm 0.03$ & $0.52 \pm 0.03$ \\
+  \texttt{jepa\_ctrl} & $0.67 \pm 0.23$ & $0.67 \pm 0.23$ & $0.52 \pm 0.02$ & $0.52 \pm 0.02$ \\
+  \texttt{jepa\_invdyn} & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $0.51 \pm 0.03$ & $1.00 \pm 0.00$ \\
+  \texttt{jepa\_reward} & $1.00 \pm 0.00$ & $0.51 \pm 0.01$ & $0.52 \pm 0.02$ & $1.00 \pm 0.00$ \\
+  \texttt{oracle} & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ \\
+\bottomrule
+\end{tabular}
+\end{table}
