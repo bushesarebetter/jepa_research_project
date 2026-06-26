@@ -1,0 +1,1439 @@
+{
+  "objectives": [
+    "recon",
+    "jepa",
+    "jepa_ac",
+    "jepa_ctrl",
+    "jepa_invdyn",
+    "jepa_reward",
+    "oracle"
+  ],
+  "cells": [
+    4
+  ],
+  "threshold": 0.75,
+  "env": "gridworld",
+  "config": "cell4_failure",
+  "config_params": {
+    "n_steps": 4000,
+    "train_n": 20000,
+    "eval_n": 4000,
+    "batch_size": 128,
+    "lr": 0.001,
+    "latent_dim": 128,
+    "mi_epochs": 300,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "predictability": 0.5,
+    "reward_fractions": [
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "latent_dims": [
+      16,
+      64,
+      128,
+      256,
+      512,
+      1024
+    ]
+  },
+  "matrix_linear_probe_acc": [
+    [
+      1.0
+    ],
+    [
+      0.5080833333333333
+    ],
+    [
+      0.6065
+    ],
+    [
+      0.5175000000000001
+    ],
+    [
+      0.6033333333333333
+    ],
+    [
+      1.0
+    ],
+    [
+      1.0
+    ]
+  ],
+  "results": [
+    {
+      "objective": "recon",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930951093833908,
+      "effective_rank": 3.4783973693847656,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "recon",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.49124999999999996,
+      "mi_infonce": 0.021874806801603697,
+      "effective_rank": 3.0138049125671387,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.619,
+      "mi_infonce": 0.19253911725692596,
+      "effective_rank": 2.9675514698028564,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_ac",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.49124999999999996,
+      "mi_infonce": 0.09059085599593963,
+      "effective_rank": 2.7491538524627686,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_ctrl",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.75125,
+      "mi_infonce": 0.17117061368636932,
+      "effective_rank": 2.9830758571624756,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_invdyn",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930970167320236,
+      "effective_rank": 4.582665920257568,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_reward",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 4,
+      "seed": 0,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930679296653732,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "oracle",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931466077964767,
+      "effective_rank": 3.077091932296753,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "recon",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5279999999999999,
+      "mi_infonce": 0.013862512032316587,
+      "effective_rank": 2.9958012104034424,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.6955,
+      "mi_infonce": 0.2737659429710373,
+      "effective_rank": 3.0376012325286865,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_ac",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5042500000000001,
+      "mi_infonce": 0.010292909066007994,
+      "effective_rank": 3.0094921588897705,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_ctrl",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5279999999999999,
+      "mi_infonce": 0.03698291532211151,
+      "effective_rank": 3.009387493133545,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_invdyn",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931475614707931,
+      "effective_rank": 4.580767631530762,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_reward",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 4,
+      "seed": 1,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931184744041428,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "oracle",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929635023277267,
+      "effective_rank": 3.348343849182129,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "recon",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.505,
+      "mi_infonce": 0.022876641670988462,
+      "effective_rank": 3.015239715576172,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.505,
+      "mi_infonce": 0.010555169503019712,
+      "effective_rank": 2.9978156089782715,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_ac",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.557,
+      "mi_infonce": 0.2311657880943283,
+      "effective_rank": 3.034452199935913,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_ctrl",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.53075,
+      "mi_infonce": 0.023271939675138853,
+      "effective_rank": 3.0045084953308105,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_invdyn",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929668401878342,
+      "effective_rank": 4.6053009033203125,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_reward",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 4,
+      "seed": 2,
+      "env": "gridworld",
+      "config": "cell4_failure",
+      "feature_name": "rule_bit",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929391836326584,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "oracle",
+        "env": "gridworld",
+        "config_name": "cell4_failure",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    }
+  ]
+}

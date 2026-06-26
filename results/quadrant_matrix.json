@@ -1,0 +1,5558 @@
+{
+  "objectives": [
+    "recon",
+    "jepa",
+    "jepa_ac",
+    "jepa_ctrl",
+    "jepa_invdyn",
+    "jepa_reward",
+    "oracle"
+  ],
+  "cells": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "threshold": 0.75,
+  "env": "quadrant",
+  "config": "matrix",
+  "config_params": {
+    "n_steps": 4000,
+    "train_n": 20000,
+    "eval_n": 4000,
+    "batch_size": 128,
+    "lr": 0.001,
+    "latent_dim": 128,
+    "mi_epochs": 300,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "predictability": 0.5,
+    "reward_fractions": [
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "latent_dims": [
+      16,
+      64,
+      128,
+      256,
+      512,
+      1024
+    ]
+  },
+  "matrix_linear_probe_acc": [
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.5115833333333334,
+      0.5115833333333334,
+      0.5150833333333332,
+      0.515
+    ],
+    [
+      0.5100833333333333,
+      0.5098333333333332,
+      0.518,
+      0.51775
+    ],
+    [
+      0.6748333333333334,
+      0.6742499999999999,
+      0.51625,
+      0.5175833333333334
+    ],
+    [
+      1.0,
+      1.0,
+      0.5090833333333333,
+      1.0
+    ],
+    [
+      1.0,
+      0.51475,
+      0.516,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  ],
+  "results": [
+    {
+      "objective": "recon",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928333257835373,
+      "effective_rank": 11.294042587280273,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5215000000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 39.773406982421875,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52325,
+      "mi_infonce": 0.0,
+      "effective_rank": 38.498416900634766,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52175,
+      "mi_infonce": 0.0,
+      "effective_rank": 41.296966552734375,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928333257835373,
+      "effective_rank": 34.68381881713867,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928342794578537,
+      "effective_rank": 22.46086311340332,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 1,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928061460655197,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 0,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931447004478439,
+      "effective_rank": 11.237242698669434,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5015,
+      "mi_infonce": 0.0,
+      "effective_rank": 47.85823440551758,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5042500000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 48.660526275634766,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.50275,
+      "mi_infonce": 0.0,
+      "effective_rank": 43.81751251220703,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931466077964767,
+      "effective_rank": 40.37771987915039,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931466077964767,
+      "effective_rank": 26.94243621826172,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 1,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931184744041428,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 1,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931356405418381,
+      "effective_rank": 10.989861488342285,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5117499999999999,
+      "mi_infonce": 0.0,
+      "effective_rank": 38.320274353027344,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.50275,
+      "mi_infonce": 0.0,
+      "effective_rank": 35.16248321533203,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931380247276291,
+      "effective_rank": 31.788179397583008,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931380247276291,
+      "effective_rank": 36.38361740112305,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931380247276291,
+      "effective_rank": 23.320730209350586,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 1,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_relevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931103681724533,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 1,
+        "seed": 2,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928323721092209,
+      "effective_rank": 11.460710525512695,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5215000000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 39.76751708984375,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52125,
+      "mi_infonce": 0.0,
+      "effective_rank": 38.49802017211914,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5217499999999999,
+      "mi_infonce": 0.0,
+      "effective_rank": 41.29724884033203,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928333257835373,
+      "effective_rank": 28.085308074951172,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 0.51625,
+      "mi_infonce": 0.0,
+      "effective_rank": 60.996150970458984,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 2,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6928061460655197,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 0,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931413625877365,
+      "effective_rank": 11.768308639526367,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.4995,
+      "mi_infonce": 0.0,
+      "effective_rank": 47.8544921875,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5047499999999999,
+      "mi_infonce": 0.0,
+      "effective_rank": 48.660667419433594,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.501,
+      "mi_infonce": 0.0,
+      "effective_rank": 43.8167610168457,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931456541221603,
+      "effective_rank": 30.41307830810547,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 0.522,
+      "mi_infonce": 0.0,
+      "effective_rank": 66.1248779296875,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 2,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931184744041428,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 1,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931346868675217,
+      "effective_rank": 10.95723819732666,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.51375,
+      "mi_infonce": 0.0,
+      "effective_rank": 38.320194244384766,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5035000000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 35.16400146484375,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931380247276291,
+      "effective_rank": 31.7878475189209,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931346868675217,
+      "effective_rank": 29.950462341308594,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 0.506,
+      "mi_infonce": 0.0,
+      "effective_rank": 58.74311828613281,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 2,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "ctrl_irrelevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931103681724533,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 2,
+        "seed": 2,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930917715232834,
+      "effective_rank": 11.659503936767578,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.49349999999999994,
+      "mi_infonce": 0.0,
+      "effective_rank": 41.649169921875,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.48250000000000004,
+      "mi_infonce": 0.0,
+      "effective_rank": 40.251365661621094,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.48725000000000007,
+      "mi_infonce": 0.0,
+      "effective_rank": 39.2108268737793,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 0.4715,
+      "mi_infonce": 0.0,
+      "effective_rank": 32.29057312011719,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 0.49275,
+      "mi_infonce": 0.0,
+      "effective_rank": 59.10371017456055,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 3,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930679296653732,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 0,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931437467735275,
+      "effective_rank": 12.027539253234863,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5315,
+      "mi_infonce": 0.0,
+      "effective_rank": 46.316402435302734,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.545,
+      "mi_infonce": 0.0,
+      "effective_rank": 47.887489318847656,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52625,
+      "mi_infonce": 0.0,
+      "effective_rank": 47.1206169128418,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 0.5315000000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 36.59864044189453,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5337500000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 71.91364288330078,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 3,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931184744041428,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 1,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929630254905685,
+      "effective_rank": 12.11655330657959,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52025,
+      "mi_infonce": 0.0,
+      "effective_rank": 37.91496658325195,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5265,
+      "mi_infonce": 0.0,
+      "effective_rank": 37.66421890258789,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5352499999999999,
+      "mi_infonce": 0.0,
+      "effective_rank": 38.89051818847656,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 0.52425,
+      "mi_infonce": 0.0,
+      "effective_rank": 34.42436218261719,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5215,
+      "mi_infonce": 0.0,
+      "effective_rank": 70.01764678955078,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 3,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_irrelevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929391836326584,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 3,
+        "seed": 2,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930917715232834,
+      "effective_rank": 11.658641815185547,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.493,
+      "mi_infonce": 0.0,
+      "effective_rank": 41.649139404296875,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.48374999999999996,
+      "mi_infonce": 0.0,
+      "effective_rank": 40.25149154663086,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.48674999999999996,
+      "mi_infonce": 0.0,
+      "effective_rank": 39.20950698852539,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930946325462326,
+      "effective_rank": 27.783775329589844,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930965398948654,
+      "effective_rank": 23.02824592590332,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 4,
+      "seed": 0,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6930679296653732,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 0,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931456541221603,
+      "effective_rank": 11.182084083557129,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5325,
+      "mi_infonce": 0.0,
+      "effective_rank": 46.323524475097656,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.54425,
+      "mi_infonce": 0.0,
+      "effective_rank": 47.88482666015625,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52925,
+      "mi_infonce": 0.0,
+      "effective_rank": 47.11300277709961,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931461309593185,
+      "effective_rank": 29.97050666809082,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931461309593185,
+      "effective_rank": 25.8272705078125,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 4,
+      "seed": 1,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6931184744041428,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 1,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "recon",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "pixels",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929630254905685,
+      "effective_rank": 12.114188194274902,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "recon",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "none",
+      "action_policy": "random",
+      "linear_probe_acc": 0.5195000000000001,
+      "mi_infonce": 0.0,
+      "effective_rank": 37.915138244628906,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ac",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action(pred)",
+      "action_policy": "random",
+      "linear_probe_acc": 0.52525,
+      "mi_infonce": 0.0,
+      "effective_rank": 37.6588020324707,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_ac",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_ctrl",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "random",
+      "linear_probe_acc": 0.53675,
+      "mi_infonce": 0.0,
+      "effective_rank": 38.890506744384766,
+      "retained": false,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_ctrl",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_invdyn",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "action",
+      "action_policy": "informative",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929658865135178,
+      "effective_rank": 28.526960372924805,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_invdyn",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "jepa_reward",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "reward",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.692966363350676,
+      "effective_rank": 23.349451065063477,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "jepa_reward",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    },
+    {
+      "objective": "oracle",
+      "cell": 4,
+      "seed": 2,
+      "env": "quadrant",
+      "config": "matrix",
+      "feature_name": "exo_relevant",
+      "predictability": 0.5,
+      "signal": "state",
+      "action_policy": "random",
+      "linear_probe_acc": 1.0,
+      "mi_infonce": 0.6929391836326584,
+      "effective_rank": 1.0,
+      "retained": true,
+      "_provenance": {
+        "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+        "versions": {
+          "python": "3.12.13",
+          "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+          "torch": "2.11.0+cu128",
+          "numpy": "2.0.2",
+          "sklearn": "1.6.1",
+          "matplotlib": "3.10.0"
+        },
+        "config": {
+          "n_steps": 4000,
+          "train_n": 20000,
+          "eval_n": 4000,
+          "batch_size": 128,
+          "lr": 0.001,
+          "latent_dim": 128,
+          "mi_epochs": 300,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "predictability": 0.5,
+          "reward_fractions": [
+            0.01,
+            0.02,
+            0.05,
+            0.1,
+            0.25,
+            0.5,
+            1.0
+          ],
+          "latent_dims": [
+            16,
+            64,
+            128,
+            256,
+            512,
+            1024
+          ]
+        },
+        "cell": 4,
+        "seed": 2,
+        "objective": "oracle",
+        "env": "quadrant",
+        "config_name": "matrix",
+        "img_size": 12,
+        "threshold": 0.75
+      }
+    }
+  ]
+}

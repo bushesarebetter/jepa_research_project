@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""M5 proposition numbers: analytical bisimulation distance vs latent class distance.
+"""M5 observation numbers: analytical bisimulation distance vs latent class distance.
 
 On the cell-4 (uncontrollable + relevant) env at p=0.5 this emits, side by side:
   analytical bisim distance   -- closed form (src.bisimulation), > 0 (= 1.0 at p=0.5)
@@ -7,7 +7,7 @@ On the cell-4 (uncontrollable + relevant) env at p=0.5 this emits, side by side:
   AE     latent class distance -- keeps it (full pixel reconstruction)
   oracle latent class distance -- upper bound (ground-truth one-hot)
 and confirms the converged JEPA class distance is far below the analytical value, i.e. the
-bisimulation error stays > 0 at convergence (empirical support for the proposition).
+bisimulation error stays > 0 at convergence (Observation 1, empirical).
 
   python proposition_numbers.py            # CPU smoke (tiny model, seconds)
   python proposition_numbers.py --full     # bigger model / longer training
@@ -71,7 +71,7 @@ def main():
     tag = '_full' if args.full else '_smoke'
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     seed = cfg['seed']
-    print(f"proposition_numbers | cell 4 | p={P} | {'full' if args.full else 'smoke'} | device={device}")
+    print(f"Observation 1 (empirical) | cell 4 | p={P} | {'full' if args.full else 'smoke'} | device={device}")
 
     env = QuadrantEnv(make_cell(4, P), IMG_SIZE, seed=seed)
     analytical = analytical_bisim_distance(env, gamma=GAMMA)
@@ -102,9 +102,9 @@ def main():
     print(f"JEPA realizes {jepa_retention:.0%} of the oracle class separation; "
           f"bisim error (oracle - JEPA) = {bisim_error:.3f}")
 
-    # The proposition: the feature has analytical bisim distance > 0, yet pure self-prediction
-    # (JEPA) collapses it -- its class distance sits far below both the reward-grounded oracle and
-    # the pixel-grounded AE, so the bisimulation error stays bounded away from 0.
+    # Observation 1 (empirical): the feature has analytical bisim distance > 0, yet pure self-
+    # prediction (JEPA) collapses it -- its class distance sits far below both the reward-grounded
+    # oracle and the pixel-grounded AE, so the bisimulation error stays bounded away from 0.
     assert analytical > 0.0, "analytical bisim distance must be > 0 for a relevant feature"
     assert jepa_d < recon_d, f"JEPA class dist {jepa_d:.3f} should be < AE {recon_d:.3f}"
     assert jepa_d < oracle_d, f"JEPA class dist {jepa_d:.3f} should be < oracle {oracle_d:.3f}"
@@ -127,7 +127,7 @@ def main():
     print(f"\nJSON -> {json_path}")
 
     block = (
-        "## M5 — analytical bisimulation + proposition numbers\n\n"
+        "## M5 — Observation 1 (empirical): bisimulation error > 0 at JEPA convergence\n\n"
         f"`python proposition_numbers.py` ({'full' if args.full else 'smoke'}: "
         f"{cfg['n_steps']} steps, latent {cfg['latent_dim']}, 1 seed). Cell 4 "
         f"(uncontrollable + relevant), p={P}, gamma={GAMMA}. Latent class distance = whitened "

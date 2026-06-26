@@ -1,0 +1,28 @@
+{
+  "config": "proposition_numbers",
+  "cell": 4,
+  "feature": "exo_relevant",
+  "predictability": 0.5,
+  "gamma": 0.99,
+  "analytical_bisim_distance": 1.0,
+  "latent_class_distance": {
+    "jepa": 0.10522949600898147,
+    "recon": 1.9976515781374318,
+    "oracle": 1.9982278850509831
+  },
+  "linear_probe_acc": {
+    "jepa": 0.49275,
+    "recon": 1.0,
+    "oracle": 1.0
+  },
+  "jepa_retention_vs_oracle": 0.05266140903958841,
+  "bisim_error_vs_jepa": 1.8929983890420017,
+  "config_params": {
+    "n_steps": 4000,
+    "train_n": 20000,
+    "eval_n": 4000,
+    "latent_dim": 128,
+    "batch_size": 128,
+    "seed": 0
+  }
+}

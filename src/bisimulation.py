@@ -23,10 +23,10 @@ differing only in background are bisimilar => distance 0). Take s0 (value=0), s1
     future term vanishes: d = g = 1 for a relevant feature.
 
 So a relevant-but-exogenous feature (cell 4) has bisim distance >= 1 > 0 at every p, yet a pure
-latent-prediction objective collapses it to ~0 in latent space (see proposition_numbers.py): the
-bisimulation error stays bounded away from 0 at convergence. The future-term reduction assumes an
-exogenous feature; for the p=0.5 case used by the proposition only the immediate term survives, so
-it is exact regardless.
+latent-prediction objective collapses it to ~0 in latent space (see proposition_numbers.py):
+Observation 1 (empirical) — the bisimulation error stays bounded away from 0 at JEPA convergence.
+The future-term reduction assumes an exogenous feature; for the p=0.5 case only the immediate term
+survives, so it is exact regardless.
 """
 import numpy as np
 

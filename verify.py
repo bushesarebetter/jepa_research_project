@@ -118,6 +118,51 @@ def bisim_sanity():
           f"proxy encoded={d_enc:.2f} indep={d_indep:.2f}")
 
 
+def wandb_not_required():
+    """Confirm that none of our source modules import wandb, so the pipeline is non-blocking
+    without it installed."""
+    import sys
+    src_mods = [k for k in sys.modules if k.startswith('src.') or k == 'src']
+    for mod in src_mods:
+        src = getattr(sys.modules[mod], '__file__', '') or ''
+        # simple text check on the already-loaded source
+        try:
+            text = open(src, encoding='utf-8').read() if src.endswith('.py') else ''
+        except OSError:
+            text = ''
+        assert 'import wandb' not in text, f"{mod} imports wandb — must not be required"
+    print("  wandb_not_required OK: no src module imports wandb")
+
+
+def e2e_smoke():
+    """End-to-end: tiny quadrant training + probe on cell 4 confirms the full pipeline works.
+    Uses the smallest possible config (50 steps) so it finishes in seconds on CPU."""
+    import torch
+    from src.quadrant_env import QuadrantEnv, make_cell
+    from src.training import train_objective, get_latents
+    from src.evaluation import linear_probe_accuracy
+    from src.information import estimate_mi_infonce
+
+    torch.manual_seed(99)
+    env = QuadrantEnv(make_cell(4, 0.5), 12, seed=99)
+    train = env.sample_transitions(500, 'random')
+    ev = QuadrantEnv(make_cell(4, 0.5), 12, seed=199).sample_transitions(300, 'random')
+    labels = ev['labels']['exo_relevant']
+
+    for obj in ('jepa', 'recon', 'jepa_reward'):
+        torch.manual_seed(0)
+        model = train_objective(obj, train, n_steps=50, img_size=12, latent_dim=16,
+                                device='cpu', batch_size=64)
+        Z = get_latents(model, ev['obs'], device='cpu')
+        acc, _ = linear_probe_accuracy(Z, labels)
+        mi = estimate_mi_infonce(Z, labels, epochs=50, device='cpu')
+        # just check they run and return reasonable types
+        assert 0.0 <= float(acc) <= 1.0, f"probe acc out of range: {acc}"
+        assert float(mi) >= 0.0, f"MI negative: {mi}"
+
+    print("  e2e_smoke OK: jepa/recon/jepa_reward trained, probed, MI estimated (cell 4, 50 steps)")
+
+
 def main():
     modules = [
         "src.env", "src.quadrant_env", "src.gridworld_env", "src.models", "src.training",
@@ -138,9 +183,11 @@ def main():
     env_zoo_cell4()
     reward_mask_sanity()
     bisim_sanity()
+    wandb_not_required()
+    e2e_smoke()
 
-    print("verify.py: imports + provenance + MI sanity + invariant 1 + env zoo + reward mask "
-          "+ bisim OK")
+    print("\nverify.py PASS: imports + provenance + MI sanity + invariant 1 + env zoo + "
+          "reward mask + bisim + wandb-not-required + e2e-smoke")
 
 
 if __name__ == "__main__":

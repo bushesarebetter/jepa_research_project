@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Cell-4 failure across both environments (mean\,$\pm$\,std, 3 seeds, random-action policy). Probe acc\,$<$\,0.75 = feature dropped. MI in nats; log\,2\,$\approx$\,0.693 = fully retained. Note large std for \texttt{jepa\_invdyn}: its rescue tracks action informativeness rather than the feature itself.}
+\label{tab:cell4_failure}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{\textbf{Quadrant}} & \multicolumn{2}{c}{\textbf{GridWorld}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Objective} & Probe acc & MI (nats) & Probe acc & MI (nats) \\
+\midrule
+  \texttt{recon} & $1.00 \pm 0.00$ & $0.69 \pm 0.00$ & $1.00 \pm 0.00$ & $0.69 \pm 0.00$ \\
+  \texttt{jepa} & $0.51 \pm 0.02$ & $0.00 \pm 0.00$ & $0.51 \pm 0.02$ & $0.02 \pm 0.00$ \\
+  \texttt{jepa\_ac} & $0.52 \pm 0.03$ & $0.00 \pm 0.00$ & $0.61 \pm 0.08$ & $0.16 \pm 0.11$ \\
+  \texttt{jepa\_ctrl} & $0.52 \pm 0.02$ & $0.00 \pm 0.00$ & $0.52 \pm 0.03$ & $0.11 \pm 0.09$ \\
+  \texttt{jepa\_invdyn} & $0.52 \pm 0.02$ & $0.00 \pm 0.00$ & $0.60 \pm 0.10$ & $0.08 \pm 0.07$ \\
+  \texttt{jepa\_reward} & $1.00 \pm 0.00$ & $0.69 \pm 0.00$ & $1.00 \pm 0.00$ & $0.69 \pm 0.00$ \\
+  \texttt{oracle} & $1.00 \pm 0.00$ & $0.69 \pm 0.00$ & $1.00 \pm 0.00$ & $0.69 \pm 0.00$ \\
+\bottomrule
+\end{tabular}
+\end{table}
