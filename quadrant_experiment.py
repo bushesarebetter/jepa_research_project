@@ -30,7 +30,7 @@ from src.env import SwitchColorEnv
 from src.gridworld_env import GridWorldHiddenRuleEnv
 from src.training import train_objective, get_latents
 from src.models import OBJECTIVES, encoder_signature
-from src.evaluation import linear_probe_accuracy
+from src.evaluation import linear_probe_accuracy, effective_rank   # NEW
 from src.information import estimate_mi_infonce
 from src.figures import quadrant_heatmap, figure7_min_reward_signal, figure8_capacity
 from src.provenance import provenance
@@ -38,7 +38,7 @@ from src.provenance import provenance
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), 'results', 'quadrant')
 FIG_DIR = os.path.join(os.path.dirname(__file__), 'results', 'figures')
 
-OBJ_ORDER = ['recon', 'jepa', 'jepa_ctrl', 'jepa_invdyn', 'jepa_reward', 'oracle']
+OBJ_ORDER = ['recon', 'jepa', 'jepa_ac', 'jepa_ctrl', 'jepa_invdyn', 'jepa_reward', 'oracle']
 CELLS = [1, 2, 3, 4]
 # jepa_invdyn is the only objective trained on informative-action data in the default matrix
 # (its rescue should track action informativeness); cell4_failure overrides this to random.
@@ -141,12 +141,13 @@ def run_matrix(cfg, env_name, device, smoke, cells, objectives, informative, con
                     latents = get_latents(model, ev['obs'], device=device)
                     acc, _ = linear_probe_accuracy(latents, eval_labels)
                     mi = estimate_mi_infonce(latents, eval_labels, epochs=cfg['mi_epochs'], device=device)
-
+                eff_rank = effective_rank(latents)
                 result = {
                     'objective': obj, 'cell': cell, 'seed': seed, 'env': env_name,
                     'config': config_name, 'feature_name': feature_name,
                     'predictability': cfg['predictability'], 'signal': OBJECTIVES[obj]['signal'],
                     'action_policy': policy, 'linear_probe_acc': float(acc), 'mi_infonce': float(mi),
+                    'effective_rank': float(eff_rank),
                     'retained': bool(acc >= THRESHOLD),
                     '_provenance': provenance(config=cfg, cell=cell, seed=seed, objective=obj,
                                               env=env_name, config_name=config_name,

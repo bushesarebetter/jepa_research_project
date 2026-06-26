@@ -1,10 +1,18 @@
 __pycache__/
 *.pyc
-# Regenerable caches -- NOT the source of truth. Result JSONs (kept) are.
 checkpoints/
 results/*.npz
-# Smoke-test outputs (--smoke): transient, never canonical. (** also catches results/quadrant/*_smoke*)
 results/**/*_smoke*
 results/*_smoke*
 .DS_Store
 *.egg-info/
+
+# Project meta / AI tooling
+CLAUDE.md
+STATUS.md
+PLAN.md
+REPRODUCE.md
+RESULTS.md
+requirements-tracking.txt
+.claude/
+graphify-out/

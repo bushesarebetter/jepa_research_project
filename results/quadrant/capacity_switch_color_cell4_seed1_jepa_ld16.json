@@ -1,0 +1,58 @@
+{
+  "objective": "jepa",
+  "cell": 4,
+  "seed": 1,
+  "env": "switch_color",
+  "config": "capacity_sweep",
+  "latent_dim": 16,
+  "linear_probe_acc": 0.51625,
+  "retained": false,
+  "_provenance": {
+    "git_commit": "520c76edeb39c64fd218cbeac7a01217765e4a3f",
+    "versions": {
+      "python": "3.12.13",
+      "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+      "torch": "2.11.0+cu128",
+      "numpy": "2.0.2",
+      "sklearn": "1.6.1",
+      "matplotlib": "3.10.0"
+    },
+    "config": {
+      "n_steps": 4000,
+      "train_n": 20000,
+      "eval_n": 4000,
+      "batch_size": 128,
+      "lr": 0.001,
+      "latent_dim": 128,
+      "mi_epochs": 300,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "predictability": 0.5,
+      "reward_fractions": [
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "latent_dims": [
+        16,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ]
+    },
+    "cell": 4,
+    "seed": 1,
+    "env": "switch_color",
+    "latent_dim": 16,
+    "img_size": 12
+  }
+}

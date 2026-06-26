@@ -104,7 +104,29 @@ class JEPAModel(nn.Module):
     def ema_update(self, decay=0.996):
         for online_p, target_p in zip(self.online_encoder.parameters(), self.target_encoder.parameters()):
             target_p.data.mul_(decay).add_(online_p.data, alpha=1 - decay)
-
+class JEPAACModel(JEPAModel):
+    """Action-CONDITIONED JEPA (V-JEPA-2-AC style): predictor sees (z_t, action_t).
+    A controllable feature is now predictable given the action (KEPT); an exogenous
+    unpredictable feature stays unpredictable (DROPPED). This is the model in which the
+    cell1-keep / cell4-drop dissociation is actually expected. Encoder is unchanged."""
+    def __init__(self, latent_dim=LATENT_DIM, img_size=32, n_actions=2):
+        super().__init__(latent_dim, img_size, n_actions)
+        self.n_actions = n_actions
+        self.predictor = nn.Sequential(
+            nn.Linear(latent_dim + n_actions, 512), nn.GELU(),
+            nn.Linear(512, 512), nn.GELU(),
+            nn.Linear(512, latent_dim),
+        )
+    def forward(self, obs_t, obs_t1, action_t=None):
+        z_ctx = self.online_encoder(obs_t)
+        a_oh = F.one_hot(action_t, self.n_actions).float()
+        z_pred = self.predictor(torch.cat([z_ctx, a_oh], dim=-1))
+        with torch.no_grad():
+            z_tgt = self.target_encoder(obs_t1)
+        pred_loss = F.mse_loss(z_pred, z_tgt)
+        var_loss = F.relu(1.0 - (z_pred.var(dim=0) + 1e-4).sqrt()).mean()
+        return pred_loss + 0.1 * var_loss, {'pred_loss': pred_loss.item(),
+                                            'var_loss': var_loss.item()}, z_ctx
 
 class AutoencoderModel(nn.Module):
     def __init__(self, latent_dim=LATENT_DIM, img_size=32, n_actions=2):
@@ -212,6 +234,8 @@ OBJECTIVES = {
     'jepa_invdyn': dict(cls=JEPAInvDynModel,  signal='action', inputs=['obs_t', 'obs_t1', 'action_t']),
     'jepa_reward': dict(cls=JEPARewardModel,  signal='reward', inputs=['obs_t', 'obs_t1', 'action_t', 'reward_t', 'reward_mask']),
     'oracle':      dict(cls=None,             signal='state',  inputs=[]),
+    'jepa_ac':     dict(cls=JEPAACModel,      signal='action(pred)', inputs=['obs_t', 'obs_t1', 'action_t']),
+
 }
 
 
