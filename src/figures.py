@@ -326,8 +326,8 @@ def figure9_cell4_failure_both_envs(data_q, data_g, out_dir, *, threshold=0.75, 
     log2 = float(np.log(2))
 
     for ax_idx, (metric_q, metric_g, ylabel, yref_val, yref_label, ylim) in enumerate([
-        (acc_q, acc_g, 'Linear probe accuracy', threshold, f'retain threshold ({threshold})', (0.42, 1.08)),
-        (mi_q, mi_g,   'InfoNCE MI (nats)',     log2,      f'log 2 ≈ {log2:.3f} nats',       (-0.02, 0.82)),
+        (acc_q, acc_g, 'Linear probe accuracy', threshold, f'retain threshold ({threshold})', (0.42, 1.18)),
+        (mi_q, mi_g,   'InfoNCE MI (nats)',     log2,      f'log 2 ≈ {log2:.3f} nats',       (-0.02, 0.92)),
     ]):
         ax = axes[ax_idx]
         for i, (vals_q, vals_g) in enumerate(
@@ -339,10 +339,10 @@ def figure9_cell4_failure_both_envs(data_q, data_g, out_dir, *, threshold=0.75, 
                         capsize=3, label='Quadrant' if i == 0 else '', zorder=3)
             bg = ax.bar(x[i] + w/2, mg, w, yerr=sg, color=env_color['gridworld'],
                         capsize=3, label='GridWorld' if i == 0 else '', zorder=3)
-            # annotate bars
-            for bar, val in [(bq[0], mq), (bg[0], mg)]:
+            # annotate above the whisker top (h + std) to avoid overlap
+            for bar, val, std in [(bq[0], mq, sq), (bg[0], mg, sg)]:
                 h = bar.get_height()
-                ax.text(bar.get_x() + bar.get_width()/2, h + 0.012,
+                ax.text(bar.get_x() + bar.get_width()/2, h + std + 0.025,
                         f'{val:.2f}', ha='center', va='bottom', fontsize=6.5, rotation=90)
 
         ax.axhline(yref_val, color='#444444', linestyle='--', linewidth=1.2,
