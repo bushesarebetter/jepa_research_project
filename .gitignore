@@ -6,7 +6,7 @@ results/**/*_smoke*
 results/*_smoke*
 .DS_Store
 *.egg-info/
-
+paper/
 # Project meta / AI tooling
 CLAUDE.md
 STATUS.md

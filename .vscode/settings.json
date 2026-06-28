@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/c:\\Users\\ayu\\JEPA_project\\jepa_final_results\\paper\\main.aux": true,
+        "**/c:\\Users\\ayu\\JEPA_project\\jepa_final_results\\paper\\main.log": true,
+        "**/c:\\Users\\ayu\\JEPA_project\\jepa_final_results\\paper\\main.gz": true,
+        "**/c:\\Users\\ayu\\JEPA_project\\jepa_final_results\\paper\\main.out": true
+    }
+}
