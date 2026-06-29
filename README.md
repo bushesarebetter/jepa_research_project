@@ -16,6 +16,7 @@ for cell 4 is **1.0 > 0**, yet JEPA's latent class distance collapses to **0.105
 of the oracle separation. The bisimulation error (oracle − JEPA) is **1.893**. This is an
 empirical observation, not a proved theorem.
 
+
 Labelling as few as **2% of transitions** with reward is sufficient to rescue the feature.
 
 **Scope:** results are from controlled synthetic environments. Transfer to real pretrained

@@ -215,6 +215,8 @@ def quadrant_heatmap(matrix, objectives, cells, out_dir, *, threshold=0.75, name
     Green  = retained (>= threshold), Red = dropped (< threshold).
     Annotated with the raw accuracy value.
     """
+    _disp = {'oracle': 'Supervised'}
+    ylabels = [_disp.get(o, o) for o in objectives]
     n_obj, n_cell = len(objectives), len(cells)
     fig, ax = plt.subplots(figsize=(2.2 * n_cell + 1.2, 0.7 * n_obj + 1.8))
 
@@ -226,7 +228,7 @@ def quadrant_heatmap(matrix, objectives, cells, out_dir, *, threshold=0.75, name
             vmin=0.5, vmax=1.0, center=threshold,
             cmap=cmap, annot=True, fmt='.2f', linewidths=0.5,
             xticklabels=[CELL_LABELS.get(c, str(c)) for c in cells],
-            yticklabels=objectives,
+            yticklabels=ylabels,
         )
     except ImportError:
         im = ax.imshow(matrix, vmin=0.5, vmax=1.0, cmap='RdYlGn', aspect='auto')
@@ -238,7 +240,7 @@ def quadrant_heatmap(matrix, objectives, cells, out_dir, *, threshold=0.75, name
         ax.set_xticks(range(n_cell))
         ax.set_xticklabels([CELL_LABELS.get(c, str(c)) for c in cells])
         ax.set_yticks(range(n_obj))
-        ax.set_yticklabels(objectives)
+        ax.set_yticklabels(ylabels)
         fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
 
     ax.set_xlabel('Feature cell  (ctrl=controllable, exo=exogenous, rel=relevant, irr=irrelevant)')
@@ -302,7 +304,7 @@ def figure9_cell4_failure_both_envs(data_q, data_g, out_dir, *, threshold=0.75, 
     obj_labels = {
         'recon': 'Recon', 'jepa': 'JEPA', 'jepa_ac': 'JEPA+AC',
         'jepa_ctrl': 'JEPA+Ctrl', 'jepa_invdyn': 'JEPA+InvDyn',
-        'jepa_reward': 'JEPA+Reward', 'oracle': 'Oracle',
+        'jepa_reward': 'JEPA+Reward', 'oracle': 'Supervised',
     }
 
     def _agg_runs(data):
@@ -361,10 +363,7 @@ def figure9_cell4_failure_both_envs(data_q, data_g, out_dir, *, threshold=0.75, 
         )
         _clean(ax)
 
-    fig.suptitle('Observation 1 (empirical): exo+rel feature dropped by pure prediction, rescued by reward grounding\n'
-                 'Cell 4 (uncontrollable + reward-relevant), p=0.5, 3 seeds, random-action policy',
-                 fontsize=10)
-    fig.tight_layout(rect=[0, 0, 1, 0.93])
+    fig.tight_layout()
     _save(fig, out_dir, name)
 
 
